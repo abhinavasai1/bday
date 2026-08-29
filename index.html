@@ -2,2194 +2,1252 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#08050d">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09050d">
 <title>For Manuuuu</title>
 
 <style>
 *{
   box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-html,body{
-  margin:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
+html{
+  scroll-behavior:smooth;
 }
 
 body{
   font-family:Georgia,"Times New Roman",serif;
-  background:#08050d;
+  background:#09050d;
   color:#fff;
-  touch-action:manipulation;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,70,160,.18),transparent 30%),
+    radial-gradient(circle at 80% 80%,rgba(130,70,255,.18),transparent 30%),
+    radial-gradient(circle at 50% 50%,rgba(255,100,190,.08),transparent 35%);
 }
 
 button{
-  font:inherit;
-  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:50px;
+  padding:15px 28px;
+  color:white;
+  background:rgba(255,255,255,.09);
+  backdrop-filter:blur(18px);
   cursor:pointer;
+  font-size:16px;
+  transition:.3s ease;
   -webkit-tap-highlight-color:transparent;
 }
 
-#background{
-  position:fixed;
-  inset:0;
-  overflow:hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 15%,
-      rgba(255,82,163,.20),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 10% 90%,
-      rgba(116,65,255,.18),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 90% 75%,
-      rgba(255,110,190,.12),
-      transparent 30%
-    ),
-    #08050d;
+button:hover{
+  transform:scale(1.05);
 }
 
-.orb{
-  position:absolute;
-  border-radius:50%;
-  filter:blur(60px);
-  opacity:.35;
-  animation:moveOrb 10s ease-in-out infinite alternate;
-}
-
-.orb1{
-  width:180px;
-  height:180px;
-  left:-60px;
-  top:15%;
-  background:#ff3d9a;
-}
-
-.orb2{
-  width:220px;
-  height:220px;
-  right:-80px;
-  bottom:10%;
-  background:#7547ff;
-  animation-delay:2s;
-}
-
-.orb3{
-  width:130px;
-  height:130px;
-  left:45%;
-  bottom:-40px;
-  background:#ff70b7;
-  animation-delay:4s;
-}
-
-@keyframes moveOrb{
-  to{
-    transform:translate(30px,-35px) scale(1.15);
-  }
+.primary{
+  background:linear-gradient(135deg,#ff4c9a,#9b55ff);
+  border:none;
+  box-shadow:0 0 35px rgba(255,70,160,.4);
 }
 
 .screen{
-  position:absolute;
-  inset:0;
-  z-index:2;
-
-  display:flex;
+  min-height:100vh;
+  display:none;
   align-items:center;
   justify-content:center;
-
-  padding:18px;
-
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-
-  transform:scale(1.05) translateY(15px);
-
-  transition:
-    opacity .75s ease,
-    transform .75s ease,
-    visibility .75s;
+  padding:25px 15px;
+  animation:fadeIn .8s ease;
 }
 
 .screen.active{
-  opacity:1;
-  visibility:visible;
-  pointer-events:auto;
-  transform:scale(1) translateY(0);
+  display:flex;
 }
 
 .content{
-  width:min(850px,100%);
-  max-height:94vh;
-  overflow:auto;
+  width:min(900px,100%);
   text-align:center;
-  scrollbar-width:none;
 }
 
-.content::-webkit-scrollbar{
-  display:none;
-}
-
-.kicker{
-  font-family:Arial,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:4px;
-  font-size:10px;
-  color:#f5afd1;
-  margin-bottom:15px;
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px) scale(.98);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
 }
 
 h1{
-  font-size:clamp(42px,11vw,86px);
+  font-size:clamp(45px,10vw,90px);
   line-height:1;
+  margin-bottom:20px;
   font-weight:500;
-  margin:0 0 20px;
 }
 
 h2{
-  font-size:clamp(30px,8vw,58px);
-  line-height:1.05;
-  font-weight:500;
-  margin:0 0 18px;
-}
-
-h3{
+  font-size:clamp(32px,7vw,60px);
+  line-height:1.08;
+  margin-bottom:20px;
   font-weight:500;
 }
 
 p{
-  font-size:clamp(17px,4.5vw,21px);
-  line-height:1.65;
-  color:#eee4eb;
+  color:#eee;
+  font-size:18px;
+  line-height:1.7;
 }
 
-button{
-  border:1px solid rgba(255,255,255,.24);
-  background:rgba(255,255,255,.08);
-
-  padding:15px 27px;
-  border-radius:999px;
-
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-
-  box-shadow:0 10px 35px rgba(0,0,0,.25);
-
-  transition:.25s;
-}
-
-button:hover{
-  transform:translateY(-3px) scale(1.02);
-}
-
-.primary{
-  background:linear-gradient(
-    135deg,
-    #ff4f9a,
-    #a45cff
-  );
-
-  border:none;
-
-  box-shadow:
-    0 0 30px rgba(255,75,160,.35);
-
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  to{
-    box-shadow:
-      0 0 50px rgba(255,75,160,.65);
-  }
+.kicker{
+  color:#ffafd4;
+  letter-spacing:4px;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  text-transform:uppercase;
+  margin-bottom:18px;
 }
 
 .heart{
-  font-size:70px;
-  margin-bottom:16px;
-
+  font-size:75px;
   animation:pulse 1.7s infinite;
-
-  filter:
-    drop-shadow(
-      0 0 25px rgba(255,80,160,.35)
-    );
+  filter:drop-shadow(0 0 25px rgba(255,80,160,.35));
 }
 
 @keyframes pulse{
   50%{
-    transform:scale(1.12);
+    transform:scale(1.15);
   }
-}
-
-.subtitle{
-  max-width:600px;
-  margin:0 auto 28px;
 }
 
 .choice{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:14px;
+  gap:15px;
+  margin-top:25px;
   flex-wrap:wrap;
-  margin-top:26px;
 }
 
-.hint{
-  font-family:Arial,sans-serif;
-  font-size:12px;
-  color:#9f94a0;
-  margin-top:18px;
+#noBtn{
+  position:relative;
 }
 
 .cake,
 .envelope{
-  font-size:105px;
+  font-size:100px;
+  margin:25px;
   cursor:pointer;
   display:inline-block;
-  animation:float 2.4s ease-in-out infinite;
+  animation:float 2s infinite ease-in-out;
 }
 
 @keyframes float{
   50%{
-    transform:translateY(-13px);
+    transform:translateY(-12px);
   }
 }
 
 .glass{
-  border:1px solid rgba(255,255,255,.13);
-
-  background:rgba(255,255,255,.065);
-
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.14);
   border-radius:28px;
-
-  padding:22px;
-
-  backdrop-filter:blur(22px);
-  -webkit-backdrop-filter:blur(22px);
-
-  box-shadow:
-    0 25px 80px rgba(0,0,0,.35);
+  padding:25px;
+  backdrop-filter:blur(20px);
+  box-shadow:0 25px 80px rgba(0,0,0,.3);
 }
-
-
-/* MEMORY GALLERY */
-
-.photo-intro{
-  max-width:620px;
-  margin:0 auto 20px;
-}
-
-.photo-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:18px;
-}
-
-.photo-card{
-  position:relative;
-  overflow:hidden;
-
-  border-radius:21px;
-
-  background:rgba(255,255,255,.06);
-
-  border:1px solid rgba(255,255,255,.13);
-
-  aspect-ratio:4/5;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.25);
-
-  opacity:0;
-
-  transform:
-    translateY(25px)
-    scale(.97);
-
-  animation:
-    photoIn .8s forwards;
-}
-
-.photo-card:nth-child(1){
-  animation-delay:.05s;
-}
-
-.photo-card:nth-child(2){
-  animation-delay:.10s;
-}
-
-.photo-card:nth-child(3){
-  animation-delay:.15s;
-}
-
-.photo-card:nth-child(4){
-  animation-delay:.20s;
-}
-
-.photo-card:nth-child(5){
-  animation-delay:.25s;
-}
-
-.photo-card:nth-child(6){
-  animation-delay:.30s;
-}
-
-.photo-card:nth-child(7){
-  animation-delay:.35s;
-}
-
-.photo-card:nth-child(8){
-  animation-delay:.40s;
-}
-
-.photo-card:nth-child(9){
-  animation-delay:.45s;
-}
-
-.photo-card:nth-child(10){
-  animation-delay:.50s;
-}
-
-.photo-card:nth-child(11){
-  animation-delay:.55s;
-}
-
-@keyframes photoIn{
-  to{
-    opacity:1;
-    transform:
-      translateY(0)
-      scale(1);
-  }
-}
-
-.photo-card img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  display:block;
-
-  transition:
-    transform .7s ease;
-}
-
-.photo-card:hover img{
-  transform:scale(1.05);
-}
-
-.photo-number{
-  position:absolute;
-
-  left:10px;
-  top:10px;
-
-  padding:5px 9px;
-
-  border-radius:999px;
-
-  background:rgba(0,0,0,.45);
-
-  backdrop-filter:blur(10px);
-
-  font-family:Arial,sans-serif;
-
-  font-size:10px;
-}
-
-
-/* LETTER */
 
 .letter{
-  max-height:62vh;
-  overflow:auto;
+  max-height:65vh;
+  overflow-y:auto;
   text-align:left;
+  scrollbar-width:none;
+}
+
+.letter::-webkit-scrollbar{
+  display:none;
 }
 
 .letter p{
-  font-size:17px;
   margin-bottom:20px;
 }
 
-.letter strong{
-  color:#ffd0e3;
+strong{
+  color:#ffd0e4;
 }
 
+/* MEMORY GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:25px;
+}
+
+.photo{
+  position:relative;
+  overflow:hidden;
+  border-radius:20px;
+  aspect-ratio:4/5;
+  background:#120b17;
+  border:1px solid rgba(255,255,255,.15);
+  animation:photoIn .8s ease both;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.6s ease;
+}
+
+.photo:hover img{
+  transform:scale(1.06);
+}
+
+.number{
+  position:absolute;
+  top:9px;
+  left:9px;
+  background:rgba(0,0,0,.5);
+  padding:5px 9px;
+  border-radius:20px;
+  font-family:Arial,sans-serif;
+  font-size:11px;
+}
+
+@keyframes photoIn{
+  from{
+    opacity:0;
+    transform:translateY(20px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
 
 /* SPECIAL PHOTO */
 
-.special-wrap{
-  width:min(550px,100%);
-  margin:25px auto 0;
+.special{
+  max-width:520px;
+  margin:25px auto;
 }
 
 .special-photo{
   position:relative;
-
-  width:100%;
   aspect-ratio:4/5;
-
-  border-radius:30px;
-
+  border-radius:28px;
   overflow:hidden;
-
-  border:1px solid rgba(255,255,255,.20);
-
+  border:1px solid rgba(255,255,255,.2);
   box-shadow:
-    0 30px 100px rgba(0,0,0,.50),
-    0 0 50px rgba(255,70,160,.12);
-
-  background:#100a16;
+    0 25px 80px rgba(0,0,0,.5),
+    0 0 45px rgba(255,70,160,.12);
 }
 
 .special-photo img{
   width:100%;
   height:100%;
-
   object-fit:cover;
-
-  display:block;
-
-  filter:
-    blur(28px)
-    brightness(.65);
-
+  filter:blur(25px) brightness(.55);
   transform:scale(1.08);
-
-  transition:
-    filter 2s ease,
-    transform 2s ease;
+  transition:2s ease;
 }
 
 .special-photo.revealed img{
-  filter:
-    blur(0)
-    brightness(1);
-
+  filter:blur(0) brightness(1);
   transform:scale(1);
 }
 
-.reveal-cover{
+.reveal{
   position:absolute;
   inset:0;
-
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
   justify-content:center;
-
   padding:25px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,80,170,.18),
-      rgba(5,3,9,.82)
-    );
-
+  background:rgba(10,5,15,.65);
   backdrop-filter:blur(8px);
-
-  transition:
-    opacity .9s ease,
-    visibility .9s ease;
+  transition:1s ease;
 }
 
-.revealed .reveal-cover{
+.special-photo.revealed .reveal{
   opacity:0;
-  visibility:hidden;
   pointer-events:none;
 }
 
 .lock{
-  font-size:62px;
+  font-size:60px;
+  margin-bottom:15px;
   animation:pulse 1.5s infinite;
 }
 
-.reveal-cover h3{
-  font-size:25px;
-  margin:15px 0 5px;
-}
-
-.reveal-cover p{
-  font-family:Arial,sans-serif;
-  font-size:13px;
-  color:#c9bbc5;
-  margin-bottom:20px;
-}
-
-.reveal-btn{
-  background:
-    linear-gradient(
-      135deg,
-      #ff4f9a,
-      #a45cff
-    );
-
-  border:none;
-
-  box-shadow:
-    0 0 30px rgba(255,70,160,.45);
-}
-
-.special-message{
+.message{
+  margin-top:25px;
   opacity:0;
-
   transform:translateY(20px);
-
-  margin:25px auto 0;
-
-  max-width:620px;
-
-  transition:
-    opacity 1.2s ease,
-    transform 1.2s ease;
+  transition:1s ease;
 }
 
-.special-message.show{
+.message.show{
   opacity:1;
   transform:translateY(0);
 }
 
-.special-message p{
-  font-size:18px;
+.final{
+  min-height:100vh;
 }
-
-.final-button{
-  margin-top:20px;
-
-  opacity:0;
-
-  transform:translateY(15px);
-
-  transition:1s;
-}
-
-.final-button.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-
-/* FINAL */
 
 .final h1{
-  font-size:clamp(48px,13vw,100px);
+  font-size:clamp(55px,13vw,105px);
 }
 
 .quote{
-  color:#ffd2e3;
-
-  font-size:
-    clamp(20px,5vw,30px);
-
-  line-height:1.6;
+  font-size:22px;
 }
 
 .punchline{
   margin-top:35px;
-
-  font-size:18px;
-
-  color:#ffd2e3;
+  color:#ffd0e4;
+  font-size:20px;
 }
-
-.small{
-  font-family:Arial,sans-serif;
-  font-size:12px;
-  color:#9e929d;
-}
-
-
-/* PARTICLES */
 
 #particles{
   position:fixed;
   inset:0;
-
-  z-index:50;
-
   pointer-events:none;
-
+  z-index:100;
   overflow:hidden;
 }
 
 .particle{
   position:absolute;
-
-  animation:
-    fall 4s linear forwards;
+  animation:fall 4s linear forwards;
 }
 
 @keyframes fall{
-
-  0%{
-    transform:
-      translateY(-10vh)
-      rotate(0);
-
+  from{
+    transform:translateY(-10vh) rotate(0);
     opacity:1;
   }
-
-  100%{
-    transform:
-      translateY(110vh)
-      rotate(720deg);
-
+  to{
+    transform:translateY(110vh) rotate(720deg);
     opacity:0;
   }
 }
-
-.flash{
-  position:fixed;
-  inset:0;
-
-  background:white;
-
-  opacity:0;
-
-  pointer-events:none;
-
-  z-index:100;
-}
-
-.flash.go{
-  animation:flash .5s;
-}
-
-@keyframes flash{
-
-  0%{
-    opacity:0;
-  }
-
-  25%{
-    opacity:.18;
-  }
-
-  100%{
-    opacity:0;
-  }
-}
-
-
-/* MOBILE */
 
 @media(max-width:600px){
 
-  .screen{
-    padding:14px;
-  }
-
-  .glass{
-    padding:16px;
-  }
-
-  .photo-grid{
+  .gallery{
     grid-template-columns:repeat(2,1fr);
     gap:8px;
   }
 
-  .photo-card{
-    border-radius:16px;
+  .glass{
+    padding:15px;
+  }
+
+  .photo{
+    border-radius:15px;
+  }
+
+  p{
+    font-size:16px;
   }
 
   .letter{
-    max-height:57vh;
+    max-height:60vh;
   }
 
   button{
-    padding:14px 22px;
+    padding:14px 23px;
   }
-
-  .special-photo{
-    border-radius:25px;
-  }
-
 }
 </style>
 </head>
 
-
 <body>
-
-<div id="background">
-
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-
-</div>
 
 <div id="particles"></div>
 
-<div class="flash" id="flash"></div>
 
-
-<!-- ================= INTRO ================= -->
+<!-- ========================= -->
+<!-- SCREEN 1 -->
+<!-- ========================= -->
 
 <section class="screen active" id="s1">
 
-  <div class="content">
+<div class="content">
 
-    <div class="heart">
-      ♡
-    </div>
+<div class="heart">♡</div>
 
-    <div class="kicker">
-      A little something for you
-    </div>
+<div class="kicker">
+A little something for you
+</div>
 
-    <h1 id="introText"></h1>
+<h1 id="typing"></h1>
 
-    <p class="subtitle">
+<p>
+I could've just wished you Happy Birthday...
+<br>
+but honestly, you deserve a little more than that.
+<br><br>
+So I made this.
+<br>
+<strong>Just for you.</strong>
+</p>
 
-      I could've just wished you Happy Birthday...
+<br>
 
-      but honestly, you deserve a little more than that.
+<button class="primary" onclick="go(2)">
+START NOW
+</button>
 
-      <br><br>
-
-      So I made this.
-
-      <br>
-
-      <strong>Just for you.</strong>
-
-    </p>
-
-    <button
-      class="primary"
-      onclick="start()"
-    >
-      START NOW
-    </button>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= QUESTION ================= -->
+<!-- ========================= -->
+<!-- SCREEN 2 -->
+<!-- ========================= -->
 
 <section class="screen" id="s2">
 
-  <div class="content">
+<div class="content">
 
-    <div class="kicker">
-      One important question
-    </div>
+<div class="kicker">
+One important question
+</div>
 
-    <h2>
-      Manuuuu...
-    </h2>
+<h2>Manuuuu...</h2>
 
-    <p>
-      Are you ready for your birthday surprise?
-    </p>
+<p>
+Are you ready for your birthday surprise?
+</p>
 
-    <div class="choice">
+<div class="choice">
 
-      <button
-        class="primary"
-        onclick="yes()"
-      >
-        YES
-      </button>
+<button class="primary" onclick="go(3)">
+YES
+</button>
 
-      <button
-        id="noBtn"
-        onclick="escapeNo()"
-      >
-        NO
-      </button>
+<button id="noBtn" onclick="noEscape()">
+NO
+</button>
 
-    </div>
+</div>
 
-    <div
-      class="hint"
-      id="noHint"
-    >
-      Choose wisely...
-    </div>
+<p id="noText" style="font-size:13px;margin-top:15px;color:#aaa;">
+Choose wisely...
+</p>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= CAKE ================= -->
+<!-- ========================= -->
+<!-- SCREEN 3 -->
+<!-- ========================= -->
 
 <section class="screen" id="s3">
 
-  <div class="content">
+<div class="content">
 
-    <div class="kicker">
-      Your birthday magic
-    </div>
+<div class="kicker">
+Your birthday magic
+</div>
 
-    <h2>
-      Close your eyes for a second...
-    </h2>
+<h2>
+Close your eyes for a second...
+</h2>
 
-    <p>
+<p>
+Think of one thing you really want.
+<br>
+Don't tell me what it is.
+<br>
+Just make the wish.
+</p>
 
-      Think of one thing you really want.
+<div class="cake" onclick="cake()">
+🎂
+</div>
 
-      <br>
+<p id="cakeText">
+Tap the cake when you're ready.
+</p>
 
-      Don't tell me what it is.
-
-      Just make the wish.
-
-    </p>
-
-    <div
-      class="cake"
-      onclick="cake()"
-    >
-      🎂
-    </div>
-
-    <p
-      class="hint"
-      id="cakeHint"
-    >
-      When you're ready, tap the cake.
-    </p>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= ENVELOPE ================= -->
+<!-- ========================= -->
+<!-- SCREEN 4 -->
+<!-- ========================= -->
 
 <section class="screen" id="s4">
 
-  <div class="content">
+<div class="content">
 
-    <div class="kicker">
-      Something from me
-    </div>
+<div class="kicker">
+Something from me
+</div>
 
-    <h2>
-      I have a lot to say...
-    </h2>
+<h2>
+I have a lot to say...
+</h2>
 
-    <p>
-      Somehow writing it feels easier than saying it.
-    </p>
+<p>
+Some things are easier to write than say.
+</p>
 
-    <div
-      class="envelope"
-      onclick="openLetter()"
-    >
-      💌
-    </div>
+<div class="envelope" onclick="go(5)">
+💌
+</div>
 
-    <p>
-      Open it when you're ready.
-    </p>
+<p>
+Open it when you're ready.
+</p>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= MEMORIES ================= -->
+<!-- ========================= -->
+<!-- SCREEN 5 -->
+<!-- 18 PHOTO MEMORY GALLERY -->
+<!-- ========================= -->
 
 <section class="screen" id="s5">
 
-  <div class="content">
+<div class="content">
 
-    <div class="kicker">
-      Our little memories
-    </div>
+<div class="kicker">
+Our little memories
+</div>
 
-    <h2>
-      Some moments worth keeping.
-    </h2>
+<h2>
+Some moments worth keeping.
+</h2>
 
-    <p class="photo-intro">
+<p>
+Little moments that probably didn't feel important
+when they happened.
+<br><br>
+But looking back now...
+<br>
+<strong>they're some of my favourite memories.</strong>
+</p>
 
-      Little moments that probably didn't feel important
-      when they happened.
+<p style="margin-top:15px;">
+From <strong>1st year, 1st sem</strong> to now...
+<br>
+look how far we've come.
+</p>
 
-      <br>
+<br>
 
-      But looking back now...
+<div class="glass">
 
-      <br>
+<div class="gallery">
 
-      <strong>
-        they're some of my favourite memories.
-      </strong>
 
-    </p>
+<!-- MEMORY 1 -->
 
-    <p>
+<div class="photo">
+<img src="IMG1.jpeg" alt="Memory 1">
+<div class="number">01</div>
+</div>
 
-      From
-      <strong>1st year, 1st sem</strong>
-      to now...
 
-      look how far we've come.
+<!-- MEMORY 2 -->
 
-    </p>
+<div class="photo">
+<img src="IMG2.jpeg" alt="Memory 2">
+<div class="number">02</div>
+</div>
 
 
-    <div class="glass">
+<!-- MEMORY 3 -->
 
-      <div class="photo-grid">
+<div class="photo">
+<img src="31714202-F1B8-4B68-A244-1B17194162F8.png" alt="Memory 3">
+<div class="number">03</div>
+</div>
 
 
-        <div class="photo-card">
+<!-- MEMORY 4 -->
 
-          <img
-            src="IMG1.jpeg"
-            alt="Memory 1"
-          >
+<div class="photo">
+<img src="IMG4.jpeg" alt="Memory 4">
+<div class="number">04</div>
+</div>
 
-          <div class="photo-number">
-            01
-          </div>
 
-        </div>
+<!-- MEMORY 5 -->
 
+<div class="photo">
+<img src="IMG_4680.jpeg" alt="Memory 5">
+<div class="number">05</div>
+</div>
 
-        <div class="photo-card">
 
-          <img
-            src="IMG2.jpeg"
-            alt="Memory 2"
-          >
+<!-- MEMORY 6 -->
 
-          <div class="photo-number">
-            02
-          </div>
+<div class="photo">
+<img src="IMG_5053.jpeg" alt="Memory 6">
+<div class="number">06</div>
+</div>
 
-        </div>
 
+<!-- MEMORY 7 -->
 
-        <div class="photo-card">
+<div class="photo">
+<img src="IMG7.png" alt="Memory 7">
+<div class="number">07</div>
+</div>
 
-          <img
-            src="IMG3.jpeg"
-            alt="Memory 3"
-          >
 
-          <div class="photo-number">
-            03
-          </div>
+<!-- MEMORY 8 -->
 
-        </div>
+<div class="photo">
+<img src="IMG8.jpeg" alt="Memory 8">
+<div class="number">08</div>
+</div>
 
 
-        <div class="photo-card">
+<!-- MEMORY 9 -->
 
-          <img
-            src="IMG4.jpeg"
-            alt="Memory 4"
-          >
+<div class="photo">
+<img src="IMG9.jpeg" alt="Memory 9">
+<div class="number">09</div>
+</div>
 
-          <div class="photo-number">
-            04
-          </div>
 
-        </div>
+<!-- MEMORY 10 -->
 
+<div class="photo">
+<img src="IMG_9206.jpeg" alt="Memory 10">
+<div class="number">10</div>
+</div>
 
-        <div class="photo-card">
 
-          <img
-            src="IMG5.jpeg"
-            alt="Memory 5"
-          >
+<!-- MEMORY 11 -->
 
-          <div class="photo-number">
-            05
-          </div>
+<div class="photo">
+<img src="IMG11.jpeg" alt="Memory 11">
+<div class="number">11</div>
+</div>
 
-        </div>
 
+<!-- MEMORY 12 -->
 
-        <div class="photo-card">
+<div class="photo">
+<img src="IMG_9413.jpeg" alt="Memory 12">
+<div class="number">12</div>
+</div>
 
-          <img
-            src="IMG6.jpeg"
-            alt="Memory 6"
-          >
 
-          <div class="photo-number">
-            06
-          </div>
+<!-- MEMORY 13 -->
 
-        </div>
+<div class="photo">
+<img src="IMG_3143.jpeg" alt="Memory 13">
+<div class="number">13</div>
+</div>
 
 
-        <div class="photo-card">
+<!-- MEMORY 14 -->
 
-          <img
-            src="IMG7.jpeg"
-            alt="Memory 7"
-          >
+<div class="photo">
+<img src="IMG_9411.jpeg" alt="Memory 14">
+<div class="number">14</div>
+</div>
 
-          <div class="photo-number">
-            07
-          </div>
 
-        </div>
+<!-- MEMORY 15 -->
 
+<div class="photo">
+<img src="28887118-A7BF-4542-9656-CF5ADF2AA534.jpeg" alt="Memory 15">
+<div class="number">15</div>
+</div>
 
-        <div class="photo-card">
 
-          <img
-            src="IMG8.jpeg"
-            alt="Memory 8"
-          >
+<!-- MEMORY 16 -->
 
-          <div class="photo-number">
-            08
-          </div>
+<div class="photo">
+<img src="96dec734-0991-4348-a72c-bd45e1eec30f.jpeg" alt="Memory 16">
+<div class="number">16</div>
+</div>
 
-        </div>
 
+<!-- MEMORY 17 -->
 
-        <div class="photo-card">
+<div class="photo">
+<img src="OAC67221-89DD-4499-962C-4D8C6A6F9561.jpeg" alt="Memory 17">
+<div class="number">17</div>
+</div>
 
-          <img
-            src="IMG9.jpeg"
-            alt="Memory 9"
-          >
 
-          <div class="photo-number">
-            09
-          </div>
+<!-- MEMORY 18 -->
 
-        </div>
+<div class="photo">
+<img src="IMG_9409.jpeg" alt="Memory 18">
+<div class="number">18</div>
+</div>
 
 
-        <div class="photo-card">
+</div>
 
-          <img
-            src="IMG10.jpeg"
-            alt="Memory 10"
-          >
+</div>
 
-          <div class="photo-number">
-            10
-          </div>
+<br>
 
-        </div>
+<button class="primary" onclick="go(6)">
+Continue
+</button>
 
-
-        <div class="photo-card">
-
-          <img
-            src="IMG11.jpeg"
-            alt="Memory 11"
-          >
-
-          <div class="photo-number">
-            11
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-
-    <div class="choice">
-
-      <button
-        class="primary"
-        onclick="go(6)"
-      >
-        Continue
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= LETTER ================= -->
+<!-- ========================= -->
+<!-- LETTER -->
+<!-- ========================= -->
 
 <section class="screen" id="s6">
 
-  <div class="content">
-
-    <div class="kicker">
-      From me to you
-    </div>
-
-
-    <div class="glass letter">
-
-
-      <p>
-
-        <strong>
-          Dear Manuuuuuuuuu,
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        Happiest Birthday to one of the most special
-        people I've met.
-
-      </p>
-
-
-      <p>
-
-        Honestly, when we met in
-        <strong>1st year, 1st sem</strong>,
-        I never imagined that you would become
-        this important to me.
-
-      </p>
-
-
-      <p>
-
-        Years passed so quickly.
-        Sometimes it genuinely feels like we just met...
-        and then I realise how many memories we've already collected.
-
-      </p>
-
-
-      <p>
-
-        We've laughed, irritated each other,
-        made random memories, survived so many things
-        and somehow, through all of it...
-
-        <strong>
-          we're still here.
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        So many people came into our lives
-        and eventually went their own ways.
-
-        But somehow,
-
-        <strong>
-          manam aithe inka unnam.
-        </strong>
-
-        And honestly, I think that's what makes
-        our bond so special.
-
-      </p>
-
-
-      <p>
-
-        Mana iddaram pichollam...
-        neku ekkuva pichi anuko,
-        ayina kuda ninnu nen bharistha.
-        Nannu nuvvu bharisthav.
-
-        Endukante mana iddaram
-        iddariki ekkuve.
-
-        Enni fights aina,
-        enni irritations aina,
-        okkokkasari okariki okaram
-        chiraku teppinchina...
-
-        last ki malli maname kalisi untam.
-
-        <strong>
-          Adhe mana bond.
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        Enthaina,
-        <strong>
-          naaku nuvvu thappa inka evarunnaru rawww.
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        And maybe that's what makes us special —
-        we don't have to be perfect with each other.
-
-        We can just be ourselves,
-        completely crazy and completely comfortable.
-
-      </p>
-
-
-      <p>
-
-        You have always been there.
-
-        You're loyal,
-        you're crazy,
-        you're sweet in your own way,
-
-        and honestly...
-
-        you're someone I never want to lose.
-
-      </p>
-
-
-      <p>
-
-        <strong>
-          Nuvvu na life lo vachina
-          oka normal person kaadhu.
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        You became one of those people
-        whose presence just feels right.
-
-      </p>
-
-
-      <p>
-
-        So on your birthday,
-        I don't just wish you success or happiness.
-
-      </p>
-
-
-      <p>
-
-        I wish that you always have reasons to smile.
-
-        I wish you find people who genuinely value you.
-
-        I wish you achieve everything you've dreamed about.
-
-        And whenever life gets difficult,
-        I hope you remember that you've got someone
-        cheering for you.
-
-      </p>
-
-
-      <p>
-
-        I hope life gives you
-        everything you deserve.
-
-        Happiness.
-        Peace.
-        Success.
-
-        And countless moments
-        that make you genuinely happy.
-
-      </p>
-
-
-      <p>
-
-        And no matter how much life changes,
-        I hope this bond never becomes
-        just another memory.
-
-      </p>
-
-
-      <p>
-
-        So please...
-
-        <strong>
-          ilaane undu.
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        Stay crazy.
-
-        <br>
-
-        Stay sweet.
-
-        <br>
-
-        Stay annoying.
-
-        <br>
-
-        And most importantly...
-
-      </p>
-
-
-      <p>
-
-        <strong>
-          stay my special one.
-        </strong>
-
-      </p>
-
-
-      <p>
-
-        Happiest Birthday,
-        Manuuuuuuuuu.
-
-      </p>
-
-
-      <p>
-
-        Here's to all the memories
-        we've already made...
-
-        and all the ones still waiting for us.
-
-      </p>
-
-
-      <p>
-
-        <strong>
-          With lots of love,<br>
-          Your Special Someone
-        </strong>
-
-      </p>
-
-
-    </div>
-
-
-    <div class="choice">
-
-      <button
-        class="primary"
-        onclick="go(7)"
-      >
-        One last thing...
-      </button>
-
-    </div>
-
-  </div>
+<div class="content">
+
+<div class="kicker">
+From me to you
+</div>
+
+<div class="glass letter">
+
+<p>
+<strong>Dear Manuuuuuuuuu,</strong>
+</p>
+
+<p>
+Happiest Birthday to one of the most special people I've met.
+</p>
+
+<p>
+Honestly, when we met in
+<strong>1st year, 1st sem</strong>,
+I never imagined that you would become this important to me.
+</p>
+
+<p>
+Years passed so quickly.
+Sometimes it genuinely feels like we just met...
+and then I realise how many memories we've already collected.
+</p>
+
+<p>
+We've laughed, irritated each other, made random memories,
+survived so many things and somehow, through all of it...
+<strong>we're still here.</strong>
+</p>
+
+<p>
+So many people came into our lives and eventually went
+their own ways.
+But somehow, <strong>manam aithe inka unnam.</strong>
+And honestly, I think that's what makes our bond so special.
+</p>
+
+<p>
+Mana iddaram pichollam...
+neku ekkuva pichi anuko,
+ayina kuda ninnu nen baristha.
+Nannu nuvvu baristhav.
+Endukante mana iddaram iddariki ekkuve.
+</p>
+
+<p>
+Enni fights aina,
+enni irritations aina,
+okkokkasari okariki okaram chiraku teppinchina...
+last ki malli maname kalisi untam.
+<strong>Adhe mana bond.</strong>
+</p>
+
+<p>
+Enthaina,
+<strong>naaku nuvvu thappa inka evarunnaru rawww.</strong>
+</p>
+
+<p>
+And maybe that's what makes us special —
+we don't have to be perfect with each other.
+We can just be ourselves,
+completely crazy and completely comfortable.
+</p>
+
+<p>
+You have always been there.
+You're loyal, you're crazy,
+you're sweet in your own way,
+and honestly...
+you're someone I never want to lose.
+</p>
+
+<p>
+<strong>
+Nuvvu na life lo vachina oka normal person kaadhu.
+</strong>
+</p>
+
+<p>
+You became one of those people whose presence just feels right.
+</p>
+
+<p>
+So on your birthday,
+I don't just wish you success or happiness.
+</p>
+
+<p>
+I wish that you always have reasons to smile.
+I wish you find people who genuinely value you.
+I wish you achieve everything you've dreamed about.
+</p>
+
+<p>
+And whenever life gets difficult,
+I hope you remember that you've got someone cheering for you.
+</p>
+
+<p>
+I hope life gives you everything you deserve.
+Happiness. Peace. Success.
+And countless moments that make you genuinely happy.
+</p>
+
+<p>
+And no matter how much life changes,
+I hope this bond never becomes just another memory.
+</p>
+
+<p>
+So please...
+<strong>ilaane undu.</strong>
+</p>
+
+<p>
+Stay crazy.
+<br>
+Stay sweet.
+<br>
+Stay annoying.
+<br>
+And most importantly...
+</p>
+
+<p>
+<strong>
+stay my special one.
+</strong>
+</p>
+
+<p>
+Happiest Birthday, Manuuuuuuuuu.
+</p>
+
+<p>
+Here's to all the memories we've already made...
+and all the ones still waiting for us.
+</p>
+
+<p>
+<strong>
+With lots of love,
+<br>
+Your Special Someone
+</strong>
+</p>
+
+</div>
+
+<br>
+
+<button class="primary" onclick="go(7)">
+One last thing...
+</button>
+
+</div>
 
 </section>
 
 
-<!-- ================= SPECIAL PHOTO ================= -->
+<!-- ========================= -->
+<!-- SPECIAL PHOTO -->
+<!-- ========================= -->
 
 <section class="screen" id="s7">
 
-  <div class="content">
+<div class="content">
 
-    <div class="kicker">
-      One last surprise
-    </div>
+<div class="kicker">
+One last surprise
+</div>
 
+<h2>
+There's one more memory.
+</h2>
 
-    <h2>
-      There's one more memory.
-    </h2>
+<p>
+I didn't want to put this one with the others.
+<br>
+Because this one means a little more to me.
+</p>
 
+<div class="special">
 
-    <p>
+<div class="special-photo" id="specialPhoto">
 
-      I didn't want to put this one
-      with the others.
+<img src="IMG_8770.jpeg" alt="Special memory">
 
-      <br>
+<div class="reveal">
 
-      Because this one means
-      a little more to me.
+<div class="lock">
+🔐
+</div>
 
-    </p>
+<h3>
+This memory is locked.
+</h3>
 
+<p style="font-size:13px;margin:10px 0 20px;">
+Tap when you're ready.
+</p>
 
-    <div class="special-wrap">
+<button class="primary" onclick="reveal()">
+TAP TO REVEAL
+</button>
 
+</div>
 
-      <div
-        class="special-photo"
-        id="specialPhoto"
-      >
-
-
-        <img
-          src="IMG12.jpeg"
-          alt="Our special memory"
-        >
-
-
-        <div class="reveal-cover">
-
-
-          <div class="lock">
-            🔐
-          </div>
+</div>
 
 
-          <h3>
-            This memory is locked.
-          </h3>
+<div class="message" id="message">
 
+<h2>
+For you, Manuuuu.
+</h2>
 
-          <p>
-            Tap when you're ready.
-          </p>
+<p id="typed"></p>
 
+<br>
 
-          <button
-            class="reveal-btn"
-            onclick="revealSpecial()"
-          >
-            TAP TO REVEAL
-          </button>
+<button class="primary" onclick="go(8)">
+One last thing...
+</button>
 
+</div>
 
-        </div>
+</div>
 
-
-      </div>
-
-
-      <div
-        class="special-message"
-        id="specialMessage"
-      >
-
-
-        <h2>
-          For you, Manuuuu.
-        </h2>
-
-
-        <p id="typedMessage"></p>
-
-
-        <button
-          class="primary final-button"
-          id="finalButton"
-          onclick="finale()"
-        >
-          One last thing...
-        </button>
-
-
-      </div>
-
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ================= FINAL ================= -->
+<!-- ========================= -->
+<!-- FINAL SCREEN -->
+<!-- ========================= -->
 
-<section
-  class="screen final"
-  id="s8"
->
+<section class="screen final" id="s8">
 
+<div class="content">
 
-  <div class="content">
+<div class="heart">
+♡
+</div>
 
+<div class="kicker">
+Happy Birthday, Manuuuu
+</div>
 
-    <div class="heart">
-      ♡
-    </div>
+<h1>
+Stay Forever.
+</h1>
 
+<p class="quote">
+No matter how many years pass,
+I hope we never become strangers.
+</p>
 
-    <div class="kicker">
-      Happy Birthday, Manuuuu
-    </div>
+<br>
 
+<p>
+Some people are only meant to be chapters.
+<br>
+I hope you're one of the stories that stays.
+</p>
 
-    <h1>
-      Stay Forever.
-    </h1>
+<p class="punchline">
+Samputha nakral padthai 😏
+</p>
 
-
-    <p class="quote">
-
-      No matter how many years pass,
-      I hope we never become strangers.
-
-    </p>
-
-
-    <p>
-
-      Some people are only meant
-      to be chapters.
-
-      <br>
-
-      I hope you're one of
-      the stories that stays.
-
-    </p>
-
-
-    <p class="punchline">
-
-      Samputha nakral padthai 😏
-
-    </p>
-
-
-  </div>
+</div>
 
 </section>
 
 
 <script>
 
-/* ================= BASIC STATE ================= */
-
-let current = 1;
-
-let noAttempts = 0;
-
-
-/* ================= INTRO TYPING ================= */
-
-const introText =
-  "Hey Manuuuu...";
-
-let introIndex = 0;
-
-
-function typeIntro(){
-
-  if(
-    introIndex <
-    introText.length
-  ){
-
-    document
-      .getElementById("introText")
-      .textContent +=
-      introText[introIndex];
-
-    introIndex++;
-
-    setTimeout(
-      typeIntro,
-      75
-    );
-
-  }
-
-}
-
-
-typeIntro();
-
-
-/* ================= NAVIGATION ================= */
+/* ========================= */
+/* SCREEN NAVIGATION */
+/* ========================= */
 
 function go(number){
 
-  const oldScreen =
-    document.getElementById(
-      "s" + current
-    );
+document
+.querySelectorAll(".screen")
+.forEach(function(screen){
+screen.classList.remove("active");
+});
 
-  const newScreen =
-    document.getElementById(
-      "s" + number
-    );
+document
+.getElementById("s"+number)
+.classList.add("active");
 
-  if(!newScreen){
-    return;
-  }
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
+if(number===5){
+burst(18);
+}
 
-  oldScreen.classList.remove(
-    "active"
-  );
-
-
-  setTimeout(()=>{
-
-    newScreen.classList.add(
-      "active"
-    );
-
-    current = number;
-
-
-    const content =
-      newScreen.querySelector(
-        ".content"
-      );
-
-
-    if(content){
-
-      content.scrollTop = 0;
-
-    }
-
-
-    if(number === 5){
-
-      burst(25);
-
-    }
-
-  },80);
+if(number===8){
+burst(50);
+}
 
 }
 
 
-/* ================= START ================= */
+/* ========================= */
+/* NO BUTTON ESCAPE */
+/* ========================= */
 
-function start(){
+let noCount=0;
 
-  burst(20);
+function noEscape(){
 
-  go(2);
+noCount++;
+
+const button=document.getElementById("noBtn");
+const text=document.getElementById("noText");
+
+if(noCount===1){
+
+button.style.transform="translateX(90px)";
+
+text.innerText=
+"Nice try...";
+
+}
+
+else if(noCount===2){
+
+button.style.transform=
+"translateX(-100px) translateY(45px)";
+
+text.innerText=
+"You really thought I'd let you say no?";
+
+}
+
+else{
+
+button.innerText="YES";
+
+button.style.transform="none";
+
+button.onclick=function(){
+
+go(3);
+
+burst(20);
+
+};
+
+text.innerText=
+"Okay... you have no choice now.";
+
+}
 
 }
 
 
-/* ================= YES ================= */
-
-function yes(){
-
-  document
-    .getElementById("noHint")
-    .textContent =
-    "I knew you would say yes.";
-
-
-  burst(35);
-
-
-  setTimeout(()=>{
-
-    go(3);
-
-  },700);
-
-}
-
-
-/* ================= NO ================= */
-
-function escapeNo(){
-
-  noAttempts++;
-
-
-  const btn =
-    document.getElementById(
-      "noBtn"
-    );
-
-
-  const hint =
-    document.getElementById(
-      "noHint"
-    );
-
-
-  const messages = [
-
-    "Nice try.",
-
-    "You really thought you could press NO?",
-
-    "NO is getting shy now.",
-
-    "Okay okay... YES it is."
-
-  ];
-
-
-  hint.textContent =
-    messages[
-      Math.min(
-        noAttempts - 1,
-        3
-      )
-    ];
-
-
-  if(noAttempts <= 3){
-
-    const padding = 30;
-
-
-    const maxX =
-      Math.max(
-        padding,
-        window.innerWidth -
-        btn.offsetWidth -
-        padding
-      );
-
-
-    const maxY =
-      Math.max(
-        padding,
-        window.innerHeight -
-        btn.offsetHeight -
-        padding
-      );
-
-
-    btn.style.position =
-      "fixed";
-
-
-    btn.style.left =
-      (
-        padding +
-        Math.random() *
-        (maxX-padding)
-      ) + "px";
-
-
-    btn.style.top =
-      (
-        padding +
-        Math.random() *
-        (maxY-padding)
-      ) + "px";
-
-
-    btn.style.transform =
-      "rotate(" +
-      (
-        Math.random()*20 - 10
-      ) +
-      "deg)";
-
-
-    burst(8);
-
-
-  }else{
-
-    btn.textContent =
-      "Okay YES";
-
-    btn.onclick = yes;
-
-  }
-
-}
-
-
-/* ================= CAKE ================= */
+/* ========================= */
+/* CAKE */
+/* ========================= */
 
 function cake(){
 
-  document
-    .getElementById("cakeHint")
-    .textContent =
-    "Wish made. Something special is waiting for you...";
+document
+.getElementById("cakeText")
+.innerText=
+"Wish made. Keep it secret.";
 
+burst(25);
 
-  burst(45);
+setTimeout(function(){
 
-  flash();
+go(4);
 
-
-  setTimeout(()=>{
-
-    go(4);
-
-  },1200);
+},1000);
 
 }
 
 
-/* ================= ENVELOPE ================= */
+/* ========================= */
+/* SPECIAL PHOTO REVEAL */
+/* ========================= */
 
-function openLetter(){
+function reveal(){
 
-  burst(30);
+document
+.getElementById("specialPhoto")
+.classList.add("revealed");
 
+document
+.getElementById("message")
+.classList.add("show");
 
-  setTimeout(()=>{
+burst(35);
 
-    go(5);
-
-  },600);
-
-}
-
-
-/* ================= SPECIAL REVEAL ================= */
-
-function revealSpecial(){
-
-  const photo =
-    document.getElementById(
-      "specialPhoto"
-    );
-
-
-  const message =
-    document.getElementById(
-      "specialMessage"
-    );
-
-
-  const finalButton =
-    document.getElementById(
-      "finalButton"
-    );
-
-
-  photo.classList.add(
-    "revealed"
-  );
-
-
-  burst(80);
-
-  flash();
-
-
-  setTimeout(()=>{
-
-    message.classList.add(
-      "show"
-    );
-
-
-    typeSpecialMessage();
-
-  },900);
-
-
-  setTimeout(()=>{
-
-    finalButton.classList.add(
-      "show"
-    );
-
-  },6000);
+typeMessage();
 
 }
 
 
-/* ================= SPECIAL MESSAGE ================= */
+/* ========================= */
+/* SPECIAL MESSAGE */
+/* ========================= */
 
 const specialText =
+"Mana iddaram pichollam... neku ekkuva pichi anuko, ayina kuda ninnu nen baristha. Nannu nuvvu baristhav. Endukante mana iddaram iddariki ekkuve. Enthaina, naaku nuvvu thappa inka evarunnaru rawww.";
 
-"Some memories are beautiful because they happened... but this one is special because it reminds me of you. No matter how many years pass, I hope this smile, this moment, and our memories always stay close to my heart. Happiest Birthday, Manuuuu. I hope this is only one of many more memories we still have to make.";
+function typeMessage(){
 
+const element=
+document.getElementById("typed");
 
-let specialIndex = 0;
+element.innerHTML="";
 
+let index=0;
 
-function typeSpecialMessage(){
+const timer=setInterval(function(){
 
-  const element =
-    document.getElementById(
-      "typedMessage"
-    );
+element.innerHTML +=
+specialText.charAt(index);
 
+index++;
 
-  element.textContent = "";
+if(index>=specialText.length){
 
-  specialIndex = 0;
+clearInterval(timer);
 
+}
 
-  function type(){
-
-    if(
-      specialIndex <
-      specialText.length
-    ){
-
-      element.textContent +=
-        specialText[
-          specialIndex
-        ];
-
-
-      specialIndex++;
-
-
-      setTimeout(
-        type,
-        28
-      );
-
-    }
-
-  }
-
-
-  type();
+},25);
 
 }
 
 
-/* ================= FINAL ================= */
-
-function finale(){
-
-  burst(140);
-
-  flash();
-
-
-  setTimeout(()=>{
-
-    go(8);
-
-  },650);
-
-}
-
-
-/* ================= FLASH ================= */
-
-function flash(){
-
-  const f =
-    document.getElementById(
-      "flash"
-    );
-
-
-  f.classList.remove(
-    "go"
-  );
-
-
-  void f.offsetWidth;
-
-
-  f.classList.add(
-    "go"
-  );
-
-}
-
-
-/* ================= PARTICLES ================= */
+/* ========================= */
+/* CONFETTI / PARTICLES */
+/* ========================= */
 
 function burst(count){
 
-  const box =
-    document.getElementById(
-      "particles"
-    );
+const container=
+document.getElementById("particles");
 
+for(let i=0;i<count;i++){
 
-  const symbols = [
+const particle=
+document.createElement("div");
 
-    "♡",
-    "✦",
-    "❤️",
-    "✨",
-    "🌸"
+particle.className="particle";
 
-  ];
+particle.innerHTML=
+["♥","♡","✦","✧"][Math.floor(Math.random()*4)];
 
+particle.style.left=
+Math.random()*100+"vw";
 
-  for(
-    let i = 0;
-    i < count;
-    i++
-  ){
+particle.style.top="-10vh";
 
-    const el =
-      document.createElement(
-        "div"
-      );
+particle.style.fontSize=
+(12+Math.random()*22)+"px";
 
+particle.style.animationDuration=
+(3+Math.random()*3)+"s";
 
-    el.className =
-      "particle";
+container.appendChild(particle);
 
+setTimeout(function(){
 
-    el.textContent =
-      symbols[
-        Math.floor(
-          Math.random() *
-          symbols.length
-        )
-      ];
+particle.remove();
 
+},6500);
 
-    el.style.left =
-      Math.random()*100 +
-      "vw";
-
-
-    el.style.top =
-      (
-        -10 -
-        Math.random()*30
-      ) + "vh";
-
-
-    el.style.fontSize =
-      (
-        10 +
-        Math.random()*20
-      ) + "px";
-
-
-    el.style.animationDuration =
-      (
-        2.5 +
-        Math.random()*2.5
-      ) + "s";
-
-
-    el.style.animationDelay =
-      (
-        Math.random()*1.2
-      ) + "s";
-
-
-    box.appendChild(el);
-
-
-    setTimeout(()=>{
-
-      el.remove();
-
-    },6000);
-
-  }
+}
 
 }
 
 
-/* ================= AMBIENT PARTICLES ================= */
+/* ========================= */
+/* OPENING TYPING */
+/* ========================= */
 
-setInterval(()=>{
+const intro=
+"Happy Birthday, Manuuuu";
 
-  if(
-    current === 1 ||
-    current === 8
-  ){
+let index=0;
 
-    const box =
-      document.getElementById(
-        "particles"
-      );
+const typing=
+document.getElementById("typing");
 
+const interval=
+setInterval(function(){
 
-    const el =
-      document.createElement(
-        "div"
-      );
+typing.innerText=
+intro.substring(0,index+1);
 
+index++;
 
-    el.className =
-      "particle";
+if(index>=intro.length){
 
+clearInterval(interval);
 
-    el.textContent =
-      [
-        "♡",
-        "✦",
-        "❤️",
-        "✨"
-      ][
-        Math.floor(
-          Math.random()*4
-        )
-      ];
+}
 
-
-    el.style.left =
-      Math.random()*100 +
-      "vw";
-
-
-    el.style.top =
-      "105vh";
-
-
-    el.style.fontSize =
-      (
-        10 +
-        Math.random()*15
-      ) + "px";
-
-
-    el.style.animationDuration =
-      (
-        5 +
-        Math.random()*4
-      ) + "s";
-
-
-    box.appendChild(el);
-
-
-    setTimeout(()=>{
-
-      el.remove();
-
-    },9000);
-
-  }
-
-},900);
+},90);
 
 </script>
 

@@ -24,7 +24,7 @@ body{
   overflow-x:hidden;
 }
 
-body:before{
+body::before{
   content:"";
   position:fixed;
   inset:0;
@@ -33,13 +33,14 @@ body:before{
     radial-gradient(circle at 20% 20%,rgba(255,70,160,.18),transparent 30%),
     radial-gradient(circle at 80% 80%,rgba(130,70,255,.18),transparent 30%),
     radial-gradient(circle at 50% 50%,rgba(255,100,190,.08),transparent 35%);
+  pointer-events:none;
 }
 
 button{
   border:1px solid rgba(255,255,255,.22);
   border-radius:50px;
   padding:15px 28px;
-  color:white;
+  color:#fff;
   background:rgba(255,255,255,.09);
   backdrop-filter:blur(18px);
   cursor:pointer;
@@ -184,7 +185,7 @@ strong{
   color:#ffd0e4;
 }
 
-/* MEMORY GALLERY */
+/* GALLERY */
 
 .gallery{
   display:grid;
@@ -381,20 +382,14 @@ strong{
 
 <div id="particles"></div>
 
-
-<!-- ========================= -->
-<!-- SCREEN 1 -->
-<!-- ========================= -->
+<!-- 1. OPENING -->
 
 <section class="screen active" id="s1">
-
 <div class="content">
 
 <div class="heart">♡</div>
 
-<div class="kicker">
-A little something for you
-</div>
+<div class="kicker">A little something for you</div>
 
 <h1 id="typing"></h1>
 
@@ -415,21 +410,15 @@ START NOW
 </button>
 
 </div>
-
 </section>
 
 
-<!-- ========================= -->
-<!-- SCREEN 2 -->
-<!-- ========================= -->
+<!-- 2. QUESTION -->
 
 <section class="screen" id="s2">
-
 <div class="content">
 
-<div class="kicker">
-One important question
-</div>
+<div class="kicker">One important question</div>
 
 <h2>Manuuuu...</h2>
 
@@ -454,25 +443,17 @@ Choose wisely...
 </p>
 
 </div>
-
 </section>
 
 
-<!-- ========================= -->
-<!-- SCREEN 3 -->
-<!-- ========================= -->
+<!-- 3. CAKE -->
 
 <section class="screen" id="s3">
-
 <div class="content">
 
-<div class="kicker">
-Your birthday magic
-</div>
+<div class="kicker">Your birthday magic</div>
 
-<h2>
-Close your eyes for a second...
-</h2>
+<h2>Close your eyes for a second...</h2>
 
 <p>
 Think of one thing you really want.
@@ -482,34 +463,24 @@ Don't tell me what it is.
 Just make the wish.
 </p>
 
-<div class="cake" onclick="cake()">
-🎂
-</div>
+<div class="cake" onclick="cake()">🎂</div>
 
 <p id="cakeText">
 Tap the cake when you're ready.
 </p>
 
 </div>
-
 </section>
 
 
-<!-- ========================= -->
-<!-- SCREEN 4 -->
-<!-- ========================= -->
+<!-- 4. ENVELOPE -->
 
 <section class="screen" id="s4">
-
 <div class="content">
 
-<div class="kicker">
-Something from me
-</div>
+<div class="kicker">Something from me</div>
 
-<h2>
-I have a lot to say...
-</h2>
+<h2>I have a lot to say...</h2>
 
 <p>
 Some things are easier to write than say.
@@ -524,26 +495,17 @@ Open it when you're ready.
 </p>
 
 </div>
-
 </section>
 
 
-<!-- ========================= -->
-<!-- SCREEN 5 -->
-<!-- 18 PHOTO MEMORY GALLERY -->
-<!-- ========================= -->
+<!-- 5. MEMORY GALLERY -->
 
 <section class="screen" id="s5">
-
 <div class="content">
 
-<div class="kicker">
-Our little memories
-</div>
+<div class="kicker">Our little memories</div>
 
-<h2>
-Some moments worth keeping.
-</h2>
+<h2>Some moments worth keeping.</h2>
 
 <p>
 Little moments that probably didn't feel important
@@ -566,150 +528,113 @@ look how far we've come.
 
 <div class="gallery">
 
-
-<!-- MEMORY 1 -->
-
+<!-- 01 -->
 <div class="photo">
 <img src="IMG1.jpeg" alt="Memory 1">
 <div class="number">01</div>
 </div>
 
-
-<!-- MEMORY 2 -->
-
+<!-- 02 -->
 <div class="photo">
 <img src="IMG2.jpeg" alt="Memory 2">
 <div class="number">02</div>
 </div>
 
-
-<!-- MEMORY 3 -->
-
+<!-- 03 -->
 <div class="photo">
 <img src="31714202-F1B8-4B68-A244-1B17194162F8.png" alt="Memory 3">
 <div class="number">03</div>
 </div>
 
-
-<!-- MEMORY 4 -->
-
+<!-- 04 -->
 <div class="photo">
 <img src="IMG4.jpeg" alt="Memory 4">
 <div class="number">04</div>
 </div>
 
-
-<!-- MEMORY 5 -->
-
+<!-- 05 -->
 <div class="photo">
 <img src="IMG_4680.jpeg" alt="Memory 5">
 <div class="number">05</div>
 </div>
 
-
-<!-- MEMORY 6 -->
-
+<!-- 06 -->
 <div class="photo">
 <img src="IMG_5053.jpeg" alt="Memory 6">
 <div class="number">06</div>
 </div>
 
-
-<!-- MEMORY 7 -->
-
+<!-- 07 -->
 <div class="photo">
 <img src="IMG7.jpeg" alt="Memory 7">
 <div class="number">07</div>
 </div>
 
-
-<!-- MEMORY 8 -->
-
+<!-- 08 -->
 <div class="photo">
 <img src="IMG8.jpeg" alt="Memory 8">
 <div class="number">08</div>
 </div>
 
-
-<!-- MEMORY 9 -->
-
+<!-- 09 -->
 <div class="photo">
 <img src="IMG9.jpeg" alt="Memory 9">
 <div class="number">09</div>
 </div>
 
-
-<!-- MEMORY 10 -->
-
+<!-- 10 -->
 <div class="photo">
 <img src="IMG_9206.jpeg" alt="Memory 10">
 <div class="number">10</div>
 </div>
 
-
-<!-- MEMORY 11 -->
-
+<!-- 11 -->
 <div class="photo">
 <img src="IMG11.jpeg" alt="Memory 11">
 <div class="number">11</div>
 </div>
 
-
-<!-- MEMORY 12 -->
-
+<!-- 12 -->
 <div class="photo">
 <img src="IMG_9413.jpeg" alt="Memory 12">
 <div class="number">12</div>
 </div>
 
-
-<!-- MEMORY 13 -->
-
+<!-- 13 -->
 <div class="photo">
 <img src="IMG_3143.jpeg" alt="Memory 13">
 <div class="number">13</div>
 </div>
 
-
-<!-- MEMORY 14 -->
-
+<!-- 14 -->
 <div class="photo">
 <img src="IMG_9411.jpeg" alt="Memory 14">
 <div class="number">14</div>
 </div>
 
-
-<!-- MEMORY 15 -->
-
+<!-- 15 -->
 <div class="photo">
 <img src="28887118-A7BF-4542-9656-CF5ADF2AA534.jpeg" alt="Memory 15">
 <div class="number">15</div>
 </div>
 
-
-<!-- MEMORY 16 -->
-
+<!-- 16 -->
 <div class="photo">
 <img src="96dec734-0991-4348-a72c-bd45e1eec30f.jpeg" alt="Memory 16">
 <div class="number">16</div>
 </div>
 
-
-<!-- MEMORY 17 -->
-
+<!-- 17 -->
 <div class="photo">
-<img src="OAC67221-89DD-4499-962C-4D8C6A6F9561.jpeg" alt="Memory 17">
+<img src="0AC67221-89DD-4499-962C-4D8C6A6F9561.jpeg" alt="Memory 17">
 <div class="number">17</div>
 </div>
 
-
-<!-- MEMORY 18 -->
-
+<!-- 18 -->
 <div class="photo">
 <img src="IMG_9409.jpeg" alt="Memory 18">
 <div class="number">18</div>
 </div>
-
 
 </div>
 
@@ -722,42 +647,33 @@ Continue
 </button>
 
 </div>
-
 </section>
 
 
-<!-- ========================= -->
-<!-- LETTER -->
-<!-- ========================= -->
+<!-- 6. LETTER -->
 
 <section class="screen" id="s6">
-
 <div class="content">
 
-<div class="kicker">
-From me to you
-</div>
+<div class="kicker">From me to you</div>
 
 <div class="glass letter">
 
-<p>
-<strong>Dear Manuuuuuuuuu,</strong>
-</p>
+<p><strong>Dear Manuuuuuuuuu,</strong></p>
 
 <p>
 Happiest Birthday to one of the most special people I've met.
 </p>
 
 <p>
-Honestly, when we met in
-<strong>1st year, 1st sem</strong>,
+Honestly, when we met in <strong>1st year, 1st sem</strong>,
 I never imagined that you would become this important to me.
 </p>
 
 <p>
-Years passed so quickly.
-Sometimes it genuinely feels like we just met...
-and then I realise how many memories we've already collected.
+Years passed so quickly. Sometimes it genuinely feels like
+we just met... and then I realise how many memories we've
+already collected.
 </p>
 
 <p>
@@ -767,9 +683,8 @@ survived so many things and somehow, through all of it...
 </p>
 
 <p>
-So many people came into our lives and eventually went
-their own ways.
-But somehow, <strong>manam aithe inka unnam.</strong>
+So many people came into our lives and eventually went their
+own ways. But somehow, <strong>manam aithe inka unnam.</strong>
 And honestly, I think that's what makes our bond so special.
 </p>
 
@@ -782,37 +697,31 @@ Endukante mana iddaram iddariki ekkuve.
 </p>
 
 <p>
-Enni fights aina,
-enni irritations aina,
+Enni fights aina, enni irritations aina,
 okkokkasari okariki okaram chiraku teppinchina...
 last ki malli maname kalisi untam.
 <strong>Adhe mana bond.</strong>
 </p>
 
 <p>
-Enthaina,
-<strong>naaku nuvvu thappa inka evarunnaru rawww.</strong>
+Enthaina, <strong>naaku nuvvu thappa inka evarunnaru rawww.</strong>
 </p>
 
 <p>
 And maybe that's what makes us special —
 we don't have to be perfect with each other.
-We can just be ourselves,
-completely crazy and completely comfortable.
+We can just be ourselves, completely crazy
+and completely comfortable.
 </p>
 
 <p>
 You have always been there.
-You're loyal, you're crazy,
-you're sweet in your own way,
-and honestly...
-you're someone I never want to lose.
+You're loyal, you're crazy, you're sweet in your own way,
+and honestly... you're someone I never want to lose.
 </p>
 
 <p>
-<strong>
-Nuvvu na life lo vachina oka normal person kaadhu.
-</strong>
+<strong>Nuvvu na life lo vachina oka normal person kaadhu.</strong>
 </p>
 
 <p>
@@ -820,8 +729,7 @@ You became one of those people whose presence just feels right.
 </p>
 
 <p>
-So on your birthday,
-I don't just wish you success or happiness.
+So on your birthday, I don't just wish you success or happiness.
 </p>
 
 <p>
@@ -847,8 +755,7 @@ I hope this bond never becomes just another memory.
 </p>
 
 <p>
-So please...
-<strong>ilaane undu.</strong>
+So please... <strong>ilaane undu.</strong>
 </p>
 
 <p>
@@ -862,9 +769,7 @@ And most importantly...
 </p>
 
 <p>
-<strong>
-stay my special one.
-</strong>
+<strong>stay my special one.</strong>
 </p>
 
 <p>
@@ -893,25 +798,18 @@ One last thing...
 </button>
 
 </div>
-
 </section>
 
 
-<!-- ========================= -->
-<!-- SPECIAL PHOTO -->
-<!-- ========================= -->
+<!-- 7. SPECIAL PHOTO -->
 
 <section class="screen" id="s7">
 
 <div class="content">
 
-<div class="kicker">
-One last surprise
-</div>
+<div class="kicker">One last surprise</div>
 
-<h2>
-There's one more memory.
-</h2>
+<h2>There's one more memory.</h2>
 
 <p>
 I didn't want to put this one with the others.
@@ -927,13 +825,9 @@ Because this one means a little more to me.
 
 <div class="reveal">
 
-<div class="lock">
-🔐
-</div>
+<div class="lock">🔐</div>
 
-<h3>
-This memory is locked.
-</h3>
+<h3>This memory is locked.</h3>
 
 <p style="font-size:13px;margin:10px 0 20px;">
 Tap when you're ready.
@@ -947,12 +841,9 @@ TAP TO REVEAL
 
 </div>
 
-
 <div class="message" id="message">
 
-<h2>
-For you, Manuuuu.
-</h2>
+<h2>For you, Manuuuu.</h2>
 
 <p id="typed"></p>
 
@@ -971,17 +862,13 @@ One last thing...
 </section>
 
 
-<!-- ========================= -->
-<!-- FINAL SCREEN -->
-<!-- ========================= -->
+<!-- 8. FINAL -->
 
 <section class="screen final" id="s8">
 
 <div class="content">
 
-<div class="heart">
-♡
-</div>
+<div class="heart">♡</div>
 
 <div class="kicker">
 Happy Birthday, Manuuuu
@@ -1015,16 +902,14 @@ Samputha nakral padthai 😏
 
 <script>
 
-/* ========================= */
 /* SCREEN NAVIGATION */
-/* ========================= */
 
 function go(number){
 
 document
 .querySelectorAll(".screen")
 .forEach(function(screen){
-screen.classList.remove("active");
+  screen.classList.remove("active");
 });
 
 document
@@ -1032,24 +917,22 @@ document
 .classList.add("active");
 
 window.scrollTo({
-top:0,
-behavior:"smooth"
+  top:0,
+  behavior:"smooth"
 });
 
 if(number===5){
-burst(18);
+  burst(18);
 }
 
 if(number===8){
-burst(50);
+  burst(50);
 }
 
 }
 
 
-/* ========================= */
-/* NO BUTTON ESCAPE */
-/* ========================= */
+/* NO BUTTON */
 
 let noCount=0;
 
@@ -1063,9 +946,7 @@ const text=document.getElementById("noText");
 if(noCount===1){
 
 button.style.transform="translateX(90px)";
-
-text.innerText=
-"Nice try...";
+text.innerText="Nice try...";
 
 }
 
@@ -1088,7 +969,6 @@ button.style.transform="none";
 button.onclick=function(){
 
 go(3);
-
 burst(20);
 
 };
@@ -1101,31 +981,24 @@ text.innerText=
 }
 
 
-/* ========================= */
 /* CAKE */
-/* ========================= */
 
 function cake(){
 
 document
 .getElementById("cakeText")
-.innerText=
-"Wish made. Keep it secret.";
+.innerText="Wish made. Keep it secret.";
 
 burst(25);
 
 setTimeout(function(){
-
-go(4);
-
+  go(4);
 },1000);
 
 }
 
 
-/* ========================= */
-/* SPECIAL PHOTO REVEAL */
-/* ========================= */
+/* SPECIAL REVEAL */
 
 function reveal(){
 
@@ -1144,17 +1017,14 @@ typeMessage();
 }
 
 
-/* ========================= */
 /* SPECIAL MESSAGE */
-/* ========================= */
 
 const specialText =
 "Mana iddaram pichollam... neku ekkuva pichi anuko, ayina kuda ninnu nen baristha. Nannu nuvvu baristhav. Endukante mana iddaram iddariki ekkuve. Enthaina, naaku nuvvu thappa inka evarunnaru rawww.";
 
 function typeMessage(){
 
-const element=
-document.getElementById("typed");
+const element=document.getElementById("typed");
 
 element.innerHTML="";
 
@@ -1162,15 +1032,12 @@ let index=0;
 
 const timer=setInterval(function(){
 
-element.innerHTML +=
-specialText.charAt(index);
+element.innerHTML+=specialText.charAt(index);
 
 index++;
 
 if(index>=specialText.length){
-
-clearInterval(timer);
-
+  clearInterval(timer);
 }
 
 },25);
@@ -1178,9 +1045,7 @@ clearInterval(timer);
 }
 
 
-/* ========================= */
-/* CONFETTI / PARTICLES */
-/* ========================= */
+/* PARTICLES */
 
 function burst(count){
 
@@ -1195,7 +1060,8 @@ document.createElement("div");
 particle.className="particle";
 
 particle.innerHTML=
-["♥","♡","✦","✧"][Math.floor(Math.random()*4)];
+["♥","♡","✦","✧"]
+[Math.floor(Math.random()*4)];
 
 particle.style.left=
 Math.random()*100+"vw";
@@ -1211,9 +1077,7 @@ particle.style.animationDuration=
 container.appendChild(particle);
 
 setTimeout(function(){
-
-particle.remove();
-
+  particle.remove();
 },6500);
 
 }
@@ -1221,30 +1085,25 @@ particle.remove();
 }
 
 
-/* ========================= */
 /* OPENING TYPING */
-/* ========================= */
 
-const intro=
-"Happy Birthday, Manuuuu";
+const intro="Happy Birthday, Manuuuu";
 
-let index=0;
+let typingIndex=0;
 
 const typing=
 document.getElementById("typing");
 
-const interval=
+const typingTimer=
 setInterval(function(){
 
 typing.innerText=
-intro.substring(0,index+1);
+intro.substring(0,typingIndex+1);
 
-index++;
+typingIndex++;
 
-if(index>=intro.length){
-
-clearInterval(interval);
-
+if(typingIndex>=intro.length){
+  clearInterval(typingTimer);
 }
 
 },90);

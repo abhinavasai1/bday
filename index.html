@@ -2,180 +2,778 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Manuuuu 💝</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08050d">
+<title>For Manuuuu ❤️</title>
+
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden}
 body{
-  font-family: Georgia, "Times New Roman", serif;
-  background:#09070d;color:#fff;touch-action:manipulation;
+  font-family:Georgia,"Times New Roman",serif;
+  background:#08050d;color:#fff;
+  touch-action:manipulation;
 }
-.screen{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  padding:24px;opacity:0;pointer-events:none;transform:scale(1.04);
-  transition:opacity .8s ease,transform .8s ease;
+button{font:inherit}
+
+#bg{
+  position:fixed;inset:0;overflow:hidden;
   background:
-    radial-gradient(circle at 50% 30%,rgba(180,55,110,.20),transparent 35%),
-    radial-gradient(circle at 20% 80%,rgba(95,55,160,.12),transparent 35%),#09070d;
+    radial-gradient(circle at 50% 15%,rgba(255,82,163,.22),transparent 32%),
+    radial-gradient(circle at 10% 90%,rgba(116,65,255,.18),transparent 35%),
+    radial-gradient(circle at 90% 75%,rgba(255,110,190,.12),transparent 30%),
+    #08050d;
 }
-.screen.active{opacity:1;pointer-events:auto;transform:scale(1)}
-.content{width:min(720px,100%);text-align:center}
-.kicker{font-family:Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;font-size:11px;color:#e7a8c5;margin-bottom:18px}
-h1{font-size:clamp(38px,10vw,76px);line-height:1.02;margin:0 0 18px;font-weight:500}
-h2{font-size:clamp(30px,7vw,52px);margin:0 0 18px;font-weight:500}
-p{font-size:clamp(17px,4vw,21px);line-height:1.7;color:#e9e0e7}
+
+.orb{
+  position:absolute;border-radius:50%;
+  filter:blur(55px);opacity:.35;
+  animation:orb 10s ease-in-out infinite alternate;
+}
+.o1{width:180px;height:180px;left:-60px;top:15%;background:#ff3d9a}
+.o2{width:220px;height:220px;right:-80px;bottom:10%;background:#7547ff;animation-delay:2s}
+.o3{width:130px;height:130px;left:45%;bottom:-40px;background:#ff70b7;animation-delay:4s}
+@keyframes orb{to{transform:translate(30px,-35px) scale(1.15)}}
+
+.screen{
+  position:absolute;inset:0;z-index:2;
+  display:flex;align-items:center;justify-content:center;
+  padding:24px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transform:scale(1.06) translateY(15px);
+  transition:opacity .75s ease,transform .75s ease,visibility .75s;
+}
+.screen.active{
+  opacity:1;visibility:visible;pointer-events:auto;
+  transform:scale(1) translateY(0);
+}
+.content{
+  width:min(760px,100%);
+  max-height:92vh;
+  text-align:center;
+  overflow:auto;
+  scrollbar-width:none;
+}
+.content::-webkit-scrollbar{display:none}
+
+.kicker{
+  font-family:Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:10px;
+  color:#f5afd1;
+  margin-bottom:16px;
+}
+h1{
+  font-size:clamp(42px,11vw,86px);
+  line-height:1;
+  font-weight:500;
+  margin:0 0 20px;
+  text-shadow:0 0 35px rgba(255,100,180,.25);
+}
+h2{
+  font-size:clamp(30px,8vw,58px);
+  line-height:1.05;
+  font-weight:500;
+  margin:0 0 18px;
+}
+p{
+  font-size:clamp(17px,4.5vw,21px);
+  line-height:1.65;
+  color:#eee4eb;
+}
+
 button{
-  border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);
-  color:white;border-radius:999px;padding:15px 25px;font-size:16px;
-  cursor:pointer;backdrop-filter:blur(12px);transition:.25s;
+  position:relative;
+  border:1px solid rgba(255,255,255,.24);
+  color:#fff;
+  background:rgba(255,255,255,.08);
+  padding:15px 27px;
+  border-radius:999px;
+  cursor:pointer;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 10px 35px rgba(0,0,0,.25);
+  transition:.25s;
 }
-button:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
-.heart{font-size:65px;animation:pulse 1.8s infinite;margin-bottom:18px}
-@keyframes pulse{50%{transform:scale(1.12)}}
-.hint{font-family:Arial,sans-serif;font-size:12px;color:#9f94a0;margin-top:20px}
-.card{
-  max-height:72vh;overflow:auto;text-align:left;padding:30px;
-  border:1px solid rgba(255,255,255,.12);border-radius:25px;
-  background:rgba(255,255,255,.055);backdrop-filter:blur(15px);
-  box-shadow:0 20px 70px rgba(0,0,0,.35);
+button:hover{
+  transform:translateY(-3px) scale(1.02);
+  background:rgba(255,255,255,.15);
 }
-.card::-webkit-scrollbar{width:4px}.card::-webkit-scrollbar-thumb{background:#6d5362;border-radius:9px}
-.message p{margin:0 0 18px}.message strong{color:#ffd0e3}
-.envelope{font-size:100px;cursor:pointer;filter:drop-shadow(0 15px 25px rgba(255,100,160,.18));animation:float 2.5s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-12px)}}
-.cake{font-size:100px;cursor:pointer;animation:float 2.5s ease-in-out infinite}
-.choice-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:25px}
-#particles{position:fixed;inset:0;pointer-events:none;z-index:20}
-.confetti{position:absolute;width:8px;height:14px;animation:fall 3.5s linear forwards}
-@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
-.spark{position:absolute;font-size:20px;animation:spark 1.8s ease-out forwards}
-@keyframes spark{0%{opacity:1;transform:scale(.5)}100%{opacity:0;transform:translateY(-120px) scale(1.4)}}
-.photo-note{
-  border:1px dashed rgba(255,255,255,.25);border-radius:20px;padding:28px;
-  margin:18px 0;color:#b9adb7;font-family:Arial,sans-serif;font-size:14px;
+.primary{
+  background:linear-gradient(135deg,#ff4f9a,#a45cff);
+  border:none;
+  box-shadow:0 0 30px rgba(255,75,160,.35);
+  animation:glow 2s infinite alternate;
 }
-.final{position:relative}
-.final h1{font-size:clamp(44px,12vw,90px)}
-.final .quote{font-size:clamp(20px,5vw,29px);line-height:1.6;color:#ffd2e3}
-.small{font-family:Arial,sans-serif;font-size:13px;color:#9d929b}
+@keyframes glow{
+  to{box-shadow:0 0 50px rgba(255,75,160,.65)}
+}
+
+.heart{
+  font-size:70px;
+  margin-bottom:16px;
+  animation:pulse 1.7s infinite;
+  filter:drop-shadow(0 0 25px rgba(255,80,160,.35));
+}
+@keyframes pulse{
+  50%{transform:scale(1.13)}
+}
+
+.typing{
+  min-height:1.1em;
+}
+
+.subtitle{
+  max-width:600px;
+  margin:0 auto 28px;
+}
+
+.glass{
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.065);
+  border-radius:28px;
+  padding:28px;
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+  box-shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+.choice{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:26px;
+}
+
+#noBtn{
+  transition:left .25s ease,top .25s ease,transform .25s ease;
+}
+
+.hint{
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  color:#9f94a0;
+  margin-top:18px;
+}
+
+.cake,.envelope{
+  font-size:105px;
+  cursor:pointer;
+  display:inline-block;
+  filter:drop-shadow(0 20px 30px rgba(255,90,170,.22));
+  animation:float 2.4s ease-in-out infinite;
+}
+@keyframes float{
+  50%{transform:translateY(-13px)}
+}
+
+.timeline{
+  display:grid;
+  gap:13px;
+  margin-top:24px;
+  text-align:left;
+}
+.memory{
+  padding:18px 20px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;
+  background:rgba(255,255,255,.055);
+  transform:translateX(-15px);
+  opacity:0;
+  animation:memoryIn .7s forwards;
+}
+.memory:nth-child(2){animation-delay:.15s}
+.memory:nth-child(3){animation-delay:.3s}
+.memory:nth-child(4){animation-delay:.45s}
+.memory:nth-child(5){animation-delay:.6s}
+@keyframes memoryIn{
+  to{opacity:1;transform:translateX(0)}
+}
+.memory b{color:#ffd1e3}
+.memory span{
+  display:block;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  color:#a99da7;
+  margin-top:5px;
+}
+
+.letter{
+  max-height:65vh;
+  overflow:auto;
+  text-align:left;
+}
+.letter p{font-size:17px}
+.letter strong{color:#ffd0e3}
+
+.photo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:20px;
+}
+.photo{
+  aspect-ratio:1;
+  border-radius:18px;
+  border:1px dashed rgba(255,255,255,.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.04);
+  font-family:Arial,sans-serif;
+  font-size:11px;
+  color:#aaa;
+  overflow:hidden;
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.final h1{
+  font-size:clamp(48px,13vw,100px);
+}
+.quote{
+  color:#ffd2e3;
+  font-size:clamp(20px,5vw,30px);
+  line-height:1.6;
+}
+.small{
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  color:#9e929d;
+}
+
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:50;
+  pointer-events:none;
+  overflow:hidden;
+}
+.particle{
+  position:absolute;
+  animation:fall 4s linear forwards;
+}
+@keyframes fall{
+  0%{transform:translateY(-10vh) rotate(0);opacity:1}
+  100%{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+.flash{
+  position:fixed;inset:0;
+  background:white;
+  opacity:0;
+  pointer-events:none;
+  z-index:100;
+}
+.flash.go{animation:flash .5s}
+@keyframes flash{
+  0%{opacity:0}
+  25%{opacity:.18}
+  100%{opacity:0}
+}
+
+@media(max-width:600px){
+  .screen{padding:18px}
+  .glass{padding:22px 17px}
+  .letter{max-height:59vh}
+  .photo-grid{grid-template-columns:repeat(3,1fr)}
+  button{padding:14px 22px}
+}
 </style>
 </head>
-<body>
-<div id="particles"></div>
 
+<body>
+
+<div id="bg">
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+  <div class="orb o3"></div>
+</div>
+
+<div id="particles"></div>
+<div class="flash" id="flash"></div>
+
+<!-- INTRO -->
 <section class="screen active" id="s1">
   <div class="content">
     <div class="heart">💝</div>
     <div class="kicker">A little something for you</div>
-    <h1>Hey Manuuuuuuu...</h1>
-    <p>There’s something waiting for you.<br>But you have to discover it yourself. ✨</p>
-    <button onclick="go(2)">Open your surprise →</button>
+    <h1 class="typing" id="introText"></h1>
+    <p class="subtitle">
+      I made something special for you.<br>
+      But first… you have to press the button. 👀
+    </p>
+    <button class="primary" onclick="start()">START NOW ✨</button>
   </div>
 </section>
 
+<!-- QUESTION -->
 <section class="screen" id="s2">
   <div class="content">
-    <div class="kicker">First surprise</div>
-    <h2>Make a wish 🎂</h2>
-    <div class="cake" onclick="cake()">🎂</div>
-    <p>Tap the cake…</p>
-    <div class="hint" id="cakeHint">Something happens when you believe in a little magic.</div>
+    <div class="kicker">Important question</div>
+    <h2>Manuuuu… ❤️</h2>
+    <p>Are you ready for your birthday surprise?</p>
+
+    <div class="choice" id="choices">
+      <button class="primary" onclick="yes()">YES 💝</button>
+      <button id="noBtn" onclick="escapeNo()">NO 😭</button>
+    </div>
+
+    <div class="hint" id="noHint">Choose wisely… 👀</div>
   </div>
 </section>
 
+<!-- CAKE -->
 <section class="screen" id="s3">
   <div class="content">
-    <div class="kicker">Something I wanted to say</div>
-    <h2>For you 💌</h2>
-    <div class="envelope" onclick="go(4)">💌</div>
-    <p>There’s a letter inside.</p>
-    <div class="hint">Tap the envelope to open it.</div>
+    <div class="kicker">Your birthday magic</div>
+    <h2>Make a wish 🎂</h2>
+    <div class="cake" onclick="cake()">🎂</div>
+    <p>Tap the cake and make your wish.</p>
+    <div class="hint" id="cakeHint">
+      Close your eyes… make it a good one. ✨
+    </div>
   </div>
 </section>
 
+<!-- ENVELOPE -->
 <section class="screen" id="s4">
   <div class="content">
-    <div class="kicker">From me to you</div>
-    <div class="card message">
-      <p><strong>Dear Manuuuuuuuuu, 💝</strong></p>
-      <p><strong>Happiest Birthday to someone truly, truly special! 🎂❤️</strong></p>
-      <p>It’s a great pleasure to meet you and have you in my life. ❤️<br>
-      <strong>1st year 1st sem lo kalisam…</strong> appudu asalu anukoledu, aa person oka roju na life lo intha special avuthav ani.</p>
-      <p><strong>Manatho unna vallu antha vellipoina, manam aithe inka unnam.</strong> 🥹<br>
-      Asalu <strong>years etla velipoyayo anedhi ardham kuda kale.</strong> First year lo kalisinattu anipisthundi, but already inni years aipoyayi.</p>
-      <p>Enno memories create chesam, enno moments share chesam… konni gurthosthe navvosthundi, konni gurthosthe <strong>“asal inni years ela aipoyayi ra?”</strong> anipisthundi. 😂❤️</p>
-      <p>You are always there, super loyal, and such a sweet soul. And I’m genuinely so grateful that life made our paths cross.</p>
-      <p><strong>It’s a great moment for me</strong> to have someone like you beside me through all these years. ❤️</p>
-      <p>And Manuuuu, <strong>you are so so special to me.</strong><br>
-      Nuvvu eppatiki <strong>na special one ga forever undipo.</strong> 💝</p>
-      <p><strong>Mari nuvvu kuda pothe nakinka evar unnaru cheppu? 🥹😂❤️</strong></p>
-      <p>So ilaane undu… mana bond ni, mana craziness ni, mana memories ni ilane carry cheddam. 🫶🏻</p>
-      <p>On your birthday, I just wish that life gives you everything you deserve — happiness, peace, success, love, and countless beautiful moments. May this year become one of the most memorable chapters of your life. ✨🌸</p>
-      <p>And one day, years from now, I hope we can look back at these days and smile at how everything started with <strong>1st year, 1st sem.</strong> ❤️</p>
-      <p><strong>Happy Birthday, Manuuuuuuuuu! 🎂💝</strong></p>
-      <p>Stay happy, stay crazy, and stay exactly the way you are. ❤️</p>
-      <p><strong>With lots of love,<br>Your Special Someone 💝</strong></p>
-    </div>
-    <div class="choice-row"><button onclick="go(5)">One last thing →</button></div>
+    <div class="kicker">Something from me</div>
+    <h2>A letter for you 💌</h2>
+    <div class="envelope" onclick="openLetter()">💌</div>
+    <p>There is something inside.</p>
+    <div class="hint">Tap the envelope.</div>
   </div>
 </section>
 
+<!-- TIMELINE -->
 <section class="screen" id="s5">
   <div class="content">
-    <div class="kicker">Before you go...</div>
-    <h2>One little question ❤️</h2>
-    <p>Will you stay my special one?</p>
-    <div class="choice-row">
-      <button onclick="finale()">Obviously 💝</button>
-      <button onclick="finale()">Forever 🫶🏻</button>
+    <div class="kicker">Our little story</div>
+    <h2>Look how far we came. 🥹</h2>
+
+    <div class="glass">
+      <div class="timeline">
+        <div class="memory">
+          <b>1st Year • 1st Sem ❤️</b>
+          <span>The beginning of everything.</span>
+        </div>
+
+        <div class="memory">
+          <b>Then the years started flying…</b>
+          <span>And somehow we were still here.</span>
+        </div>
+
+        <div class="memory">
+          <b>Countless memories 😂</b>
+          <span>Some beautiful. Some absolutely crazy.</span>
+        </div>
+
+        <div class="memory">
+          <b>Through everything 🫶🏻</b>
+          <span>People came and went. We stayed.</span>
+        </div>
+
+        <div class="memory">
+          <b>And now… 🎂</b>
+          <span>Another birthday. Another memory.</span>
+        </div>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo">📸 Photo 1</div>
+        <div class="photo">📸 Photo 2</div>
+        <div class="photo">📸 Photo 3</div>
+      </div>
     </div>
-    <div class="photo-note">📸 You can replace this box with your favourite photo together if you want to personalise the website.</div>
+
+    <div class="choice">
+      <button class="primary" onclick="go(6)">Read my letter →</button>
+    </div>
   </div>
 </section>
 
-<section class="screen final" id="s6">
+<!-- LETTER -->
+<section class="screen" id="s6">
   <div class="content">
+    <div class="kicker">From me to you</div>
+
+    <div class="glass letter">
+
+      <p><strong>Dear Manuuuuuuuuu, 💝</strong></p>
+
+      <p>
+        <strong>Happiest Birthday to someone truly, truly special! 🎂❤️</strong>
+      </p>
+
+      <p>
+        It’s a great pleasure to meet you and have you in my life. ❤️
+      </p>
+
+      <p>
+        <strong>1st year 1st sem lo kalisam…</strong>
+        appudu asalu anukoledu, aa person oka roju na life lo
+        intha special avuthav ani.
+      </p>
+
+      <p>
+        <strong>Manatho unna vallu antha vellipoina, manam aithe inka unnam.</strong>
+        🥹
+        Asalu <strong>years etla velipoyayo anedhi ardham kuda kale.</strong>
+      </p>
+
+      <p>
+        First year lo kalisinattu anipisthundi, but already inni years aipoyayi.
+      </p>
+
+      <p>
+        Enno memories create chesam, enno moments share chesam…
+        konni gurthosthe navvosthundi, konni gurthosthe
+        <strong>“asal inni years ela aipoyayi ra?”</strong> anipisthundi. 😂❤️
+      </p>
+
+      <p>
+        You are always there, super loyal, and such a sweet soul.
+        And I’m genuinely so grateful that life made our paths cross.
+      </p>
+
+      <p>
+        <strong>It’s a great moment for me</strong>
+        to have someone like you beside me through all these years. ❤️
+      </p>
+
+      <p>
+        And Manuuuu,
+        <strong>you are so so special to me.</strong>
+        Nuvvu eppatiki
+        <strong>na special one ga forever undipo.</strong> 💝
+      </p>
+
+      <p>
+        <strong>
+        Mari nuvvu kuda pothe nakinka evar unnaru cheppu? 🥹😂❤️
+        </strong>
+      </p>
+
+      <p>
+        So ilaane undu…
+        mana bond ni, mana craziness ni,
+        mana memories ni ilane carry cheddam. 🫶🏻
+      </p>
+
+      <p>
+        On your birthday, I just wish that life gives you everything
+        you deserve — happiness, peace, success, love, and countless
+        beautiful moments.
+      </p>
+
+      <p>
+        May this year become one of the most memorable chapters
+        of your life. ✨🌸
+      </p>
+
+      <p>
+        And one day, years from now, I hope we can look back at these days
+        and smile at how everything started with
+        <strong>1st year, 1st sem.</strong> ❤️
+      </p>
+
+      <p>
+        <strong>Happy Birthday, Manuuuuuuuuu! 🎂💝</strong>
+      </p>
+
+      <p>
+        Stay happy, stay crazy, and stay exactly the way you are. ❤️
+      </p>
+
+      <p>
+        <strong>
+        With lots of love,<br>
+        Your Special Someone 💝
+        </strong>
+      </p>
+
+    </div>
+
+    <div class="choice">
+      <button class="primary" onclick="go(7)">
+        One last thing… ❤️
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL QUESTION -->
+<section class="screen" id="s7">
+  <div class="content">
+    <div class="heart">🥹</div>
+    <div class="kicker">Before you leave</div>
+    <h2>One little question…</h2>
+
+    <p>
+      Will you stay my special one?
+    </p>
+
+    <div class="choice">
+      <button class="primary" onclick="finale()">
+        Obviously 💝
+      </button>
+
+      <button onclick="finale()">
+        Forever 🫶🏻
+      </button>
+    </div>
+
+    <p class="small">
+      There is only one correct answer. 😌
+    </p>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="screen final" id="s8">
+  <div class="content">
+
     <div class="heart">❤️</div>
-    <div class="kicker">Happy Birthday, Manuuuu</div>
+
+    <div class="kicker">
+      Happy Birthday, Manuuuu
+    </div>
+
     <h1>Stay Forever.</h1>
-    <p class="quote">“Nuvvu eppatiki na special one ga forever undipo.”</p>
-    <p>Some people enter our lives quietly…<br>and somehow become unforgettable.</p>
-    <p class="small">Made with love, just for you. 💝</p>
+
+    <p class="quote">
+      “Nuvvu eppatiki na special one ga forever undipo.”
+    </p>
+
+    <p>
+      Some people enter our lives quietly…<br>
+      and somehow become unforgettable.
+    </p>
+
+    <p class="small">
+      Made with love, just for you. 💝
+    </p>
+
   </div>
 </section>
 
 <script>
-let current=1;
-function go(n){
-  document.getElementById('s'+current).classList.remove('active');
-  document.getElementById('s'+n).classList.add('active');
-  current=n;
-  window.scrollTo(0,0);
-}
-function cake(){
-  document.getElementById('cakeHint').innerHTML='✨ Wish made. Now there’s a little letter waiting for you...';
-  burst(35);
-  setTimeout(()=>go(3),1100);
-}
-function finale(){
-  go(6); burst(120);
-}
-function burst(n){
-  const box=document.getElementById('particles');
-  for(let i=0;i<n;i++){
-    const e=document.createElement('div');
-    e.className='confetti';
-    e.textContent=['❤','✦','•','♡','✧'][Math.floor(Math.random()*5)];
-    e.style.left=Math.random()*100+'vw';
-    e.style.top=(-10-Math.random()*30)+'vh';
-    e.style.fontSize=(10+Math.random()*18)+'px';
-    e.style.animationDelay=(Math.random()*1.2)+'s';
-    e.style.opacity=.65+Math.random()*.35;
-    box.appendChild(e);
-    setTimeout(()=>e.remove(),5000);
+
+let current = 1;
+let noAttempts = 0;
+
+/* INTRO TYPING */
+const intro = "Hey Manuuuuuuu...";
+let introIndex = 0;
+
+function typeIntro(){
+  if(introIndex < intro.length){
+    document.getElementById("introText").textContent += intro[introIndex];
+    introIndex++;
+    setTimeout(typeIntro,75);
   }
 }
+
+typeIntro();
+
+/* SCREEN NAVIGATION */
+function go(n){
+  const oldScreen = document.getElementById("s"+current);
+  const newScreen = document.getElementById("s"+n);
+
+  if(!newScreen)return;
+
+  oldScreen.classList.remove("active");
+
+  setTimeout(()=>{
+    newScreen.classList.add("active");
+    current=n;
+  },80);
+
+  window.scrollTo(0,0);
+
+  if(n===5){
+    setTimeout(()=>burst(18),250);
+  }
+}
+
+function start(){
+  burst(20);
+  go(2);
+}
+
+/* YES */
+function yes(){
+  document.getElementById("noHint").textContent =
+    "I knew you would say YES. 😌❤️";
+
+  burst(35);
+
+  setTimeout(()=>{
+    go(3);
+  },700);
+}
+
+/* ESCAPING NO BUTTON */
+function escapeNo(){
+
+  noAttempts++;
+
+  const btn = document.getElementById("noBtn");
+  const hint = document.getElementById("noHint");
+
+  const messages = [
+    "Nice try 😂",
+    "You really thought you could press NO? 😭",
+    "NO is getting shy now 👀",
+    "Okay okay… YES it is. 😂❤️"
+  ];
+
+  hint.textContent =
+    messages[Math.min(noAttempts-1,messages.length-1)];
+
+  if(noAttempts <= 3){
+
+    const padding = 30;
+
+    const maxX =
+      Math.max(
+        padding,
+        window.innerWidth - btn.offsetWidth - padding
+      );
+
+    const maxY =
+      Math.max(
+        padding,
+        window.innerHeight - btn.offsetHeight - padding
+      );
+
+    btn.style.position="fixed";
+    btn.style.left=(padding + Math.random()*(maxX-padding))+"px";
+    btn.style.top=(padding + Math.random()*(maxY-padding))+"px";
+
+    btn.style.transform=
+      "rotate("+(Math.random()*20-10)+"deg)";
+
+    burst(8);
+
+  }else{
+
+    btn.style.position="relative";
+    btn.style.left="auto";
+    btn.style.top="auto";
+    btn.style.transform="scale(.85)";
+    btn.textContent="Okay YES 😭❤️";
+
+    btn.onclick=yes;
+  }
+}
+
+/* CAKE */
+function cake(){
+
+  document.getElementById("cakeHint").textContent =
+    "✨ Wish made. Something special is waiting for you...";
+
+  burst(45);
+
+  document.getElementById("flash").classList.remove("go");
+  void document.getElementById("flash").offsetWidth;
+  document.getElementById("flash").classList.add("go");
+
+  setTimeout(()=>{
+    go(4);
+  },1200);
+}
+
+/* ENVELOPE */
+function openLetter(){
+
+  burst(30);
+
+  setTimeout(()=>{
+    go(5);
+  },600);
+}
+
+/* FINAL */
+function finale(){
+
+  burst(120);
+
+  document.getElementById("flash").classList.remove("go");
+  void document.getElementById("flash").offsetWidth;
+  document.getElementById("flash").classList.add("go");
+
+  setTimeout(()=>{
+    go(8);
+  },600);
+}
+
+/* PARTICLES */
+function burst(count){
+
+  const box=document.getElementById("particles");
+
+  const symbols=[
+    "❤️","💗","💖","💕","💝",
+    "✨","✦","♡","🌸","🥹"
+  ];
+
+  for(let i=0;i<count;i++){
+
+    const el=document.createElement("div");
+
+    el.className="particle";
+
+    el.textContent=
+      symbols[Math.floor(Math.random()*symbols.length)];
+
+    el.style.left=Math.random()*100+"vw";
+    el.style.top=(-10-Math.random()*30)+"vh";
+    el.style.fontSize=(10+Math.random()*20)+"px";
+    el.style.animationDuration=(2.5+Math.random()*2.5)+"s";
+    el.style.animationDelay=(Math.random()*1.2)+"s";
+
+    box.appendChild(el);
+
+    setTimeout(()=>{
+      el.remove();
+    },6000);
+  }
+}
+
+/* EXTRA AMBIENT HEARTS */
+setInterval(()=>{
+
+  if(current===1 || current===8){
+    const box=document.getElementById("particles");
+
+    const el=document.createElement("div");
+    el.className="particle";
+    el.textContent=["♡","✦","❤️","✨"][Math.floor(Math.random()*4)];
+
+    el.style.left=Math.random()*100+"vw";
+    el.style.top="105vh";
+    el.style.fontSize=(10+Math.random()*15)+"px";
+    el.style.animationDuration=(5+Math.random()*4)+"s";
+
+    box.appendChild(el);
+
+    setTimeout(()=>el.remove(),9000);
+  }
+
+},900);
+
 </script>
+
 </body>
 </html>
